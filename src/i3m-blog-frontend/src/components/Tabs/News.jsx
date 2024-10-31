@@ -35,7 +35,7 @@ const News = () => {
       <section className="mb-10">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold">Latest Articles</h2>
-          <span className="flex-grow border-t-2 border-red-500 ml-4"></span>
+          <span className="flex-grow border-t-2 border-i3m-pink ml-4"></span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {latestArticles.map((article) => (
@@ -55,7 +55,7 @@ const News = () => {
       <section className="mb-10">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold">Artificial Intelligence</h2>
-          <span className="flex-grow border-t-2 border-red-500 ml-4"></span>
+          <span className="flex-grow border-t-2 border-i3m-pink ml-4"></span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {aiArticles.map((article) => (
@@ -75,7 +75,7 @@ const News = () => {
       <section className="mb-10">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold">Instagram Marketing</h2>
-          <span className="flex-grow border-t-2 border-red-500 ml-4"></span>
+          <span className="flex-grow border-t-2 border-i3m-pink ml-4"></span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {instagramArticles.map((article) => (
