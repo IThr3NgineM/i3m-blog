@@ -54,7 +54,7 @@ const AdminDashboard = () => {
       <main className="flex-1 p-8">
          {/* Header */}
          <header className="flex justify-between items-center mb-8 bg-white shadow-lg p-4 rounded-lg">
-          <h1 className="text-2xl font-bold">Admin Dashboard</h1>
+          <h1 className="text-2xl font-bold">Welcome Onboard</h1>
           <div className="flex items-center space-x-4">
             <img src={user.avatar} alt="User avatar" className="w-10 h-10 rounded-full" />
             <span className="text-lg font-semibold">{user.name}</span>

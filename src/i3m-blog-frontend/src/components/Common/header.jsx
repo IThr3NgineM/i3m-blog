@@ -23,9 +23,8 @@ const Header = () => {
     
     // Dummy login validation
     if (username === "admin" && password === "password") {
-      alert("Login successful!");
       setShowLoginPopup(false); // Close the login popup
-      navigate("/admin/dashboard"); // Redirect to admin dashboard
+      navigate("/admin/dashboard"); 
     } else {
       alert("Invalid username or password");
     }
