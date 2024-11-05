@@ -92,7 +92,7 @@ const News = () => {
       </section>
 
       {/* Highlighted Section */}
-      <section className="flex flex-col md:flex-row items-center px-8 py-10 bg-i3m-purple rounded-lg my-8 shadow-lg max-w-5xl mx-auto">
+      <section className="flex flex-col md:flex-row items-center px-8 py-10 bg-inherit border-x-2 border-y-2 border-i3m-pink  rounded-lg my-8 shadow-lg max-w-5xl mx-auto">
         <div className="md:w-1/3">
           <img src={highlightImage1} alt="State of Marketing Trends" className="rounded-lg w-full h-48 object-cover md:h-auto" />
         </div>
@@ -104,7 +104,7 @@ const News = () => {
         </div>
       </section>
       
-      <section className="flex flex-col md:flex-row items-center px-8 py-10 bg-i3m-purple rounded-lg my-8 shadow-lg max-w-5xl mx-auto">
+      <section className="flex flex-col md:flex-row items-center px-8 py-10 bg-inherit border-x-2 border-y-2 border-i3m-pink rounded-lg my-8 shadow-lg max-w-5xl mx-auto">
         <div className="md:w-1/3">
           <img src={highlightImage2} alt="Marketing & Trends Report" className="rounded-lg w-full h-48 object-cover md:h-auto" />
         </div>
