@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Logo from "../../assets/IThreeM.png";
 import AllContent from "../Tabs/Allcontent";
 import NewsContent from "../Tabs/News";
@@ -9,9 +10,25 @@ import ReleasesContent from "../Tabs/Release";
 const Header = () => {
   const [activeTab, setActiveTab] = useState("All");
   const [showPopup, setShowPopup] = useState(false);
+  const [showLoginPopup, setShowLoginPopup] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate(); 
 
-  const togglePopup = () => {
-    setShowPopup(!showPopup);
+  const togglePopup = () => setShowPopup(!showPopup);
+  const toggleLoginPopup = () => setShowLoginPopup(!showLoginPopup);
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    
+    // Dummy login validation
+    if (username === "admin" && password === "password") {
+      alert("Login successful!");
+      setShowLoginPopup(false); // Close the login popup
+      navigate("/admin/dashboard"); // Redirect to admin dashboard
+    } else {
+      alert("Invalid username or password");
+    }
   };
 
   return (
@@ -49,7 +66,10 @@ const Header = () => {
             Subscribe
           </button>
           {/* Admin Login Button */}
-          <button className="px-4 py-2 rounded-md bg-i3m-pink text-white hover:bg-i3m-purple">
+          <button 
+            onClick={toggleLoginPopup} 
+            className="px-4 py-2 rounded-md bg-i3m-pink text-white hover:bg-i3m-purple"
+          >
             Login
           </button>
         </div>
@@ -64,7 +84,7 @@ const Header = () => {
         {/* {activeTab === "Showcase" && <ShowcaseContent />} */}
       </div>
 
-      {/* Popup Form */}
+      {/* Subscribe Popup Form */}
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs w-full">
@@ -95,6 +115,51 @@ const Header = () => {
             </form>
             <button 
               onClick={togglePopup} 
+              className="mt-4 text-gray-800 hover:text-gray-600"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Login Popup Form */}
+      {showLoginPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs w-full">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">Admin Login</h2>
+            <form onSubmit={handleLoginSubmit} className="space-y-4">
+              <div>
+                <label className="block text-gray-700">Username</label>
+                <input
+                  type="text"
+                  name="username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  placeholder="Username"
+                  className="w-full px-4 py-2 border border-gray-300 rounded"
+                />
+              </div>
+              <div>
+                <label className="block text-gray-700">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Password"
+                  className="w-full px-4 py-2 border border-gray-300 rounded"
+                />
+              </div>
+              <button 
+                type="submit" 
+                className="w-full bg-gray-800 hover:bg-gray-700 text-white font-semibold px-4 py-2 rounded"
+              >
+                Login
+              </button>
+            </form>
+            <button 
+              onClick={toggleLoginPopup} 
               className="mt-4 text-gray-800 hover:text-gray-600"
             >
               Close
