@@ -43,7 +43,7 @@ const Header = () => {
 
         {/* Tab Navigation */}
         <nav className="space-x-4">
-          {["All", "News", "Events", "Releases", "Showcase"].map((tab) => (
+          {["All", "News", "Events", "Releases"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
