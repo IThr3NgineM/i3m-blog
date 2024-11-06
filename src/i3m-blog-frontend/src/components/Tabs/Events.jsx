@@ -62,7 +62,7 @@ const EventsContent = () => {
       <section className="mb-10">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold">Community Events</h2>
-          <span className="flex-grow border-t-2 border-red-500 ml-4"></span>
+          <span className="flex-grow border-t-2 border-i3m-pink ml-4"></span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {pastEvents.map((event) => (
@@ -83,14 +83,14 @@ const EventsContent = () => {
       <section className="mb-10">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold">Upcoming Events</h2>
-          <span className="flex-grow border-t-2 border-red-500 ml-4"></span>
+          <span className="flex-grow border-t-2 border-i3m-pink ml-4"></span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {upcomingEvents.map((event) => (
             <div key={event.id} className="bg-gray-200 rounded-lg shadow-lg overflow-hidden p-4">
-              <h3 className="text-lg font-semibold text-red-600">{event.title}</h3>
-              <p className="text-gray-500">{event.date}</p>
-              <p className="text-gray-600 mt-2">{event.description}</p>
+              <h3 className="text-lg font-semibold text-i3m-pink">{event.title}</h3>
+              <p className="text-slate-950">{event.date}</p>
+              <p className="text-slate-950 mt-2">{event.description}</p>
             </div>
           ))}
         </div>
